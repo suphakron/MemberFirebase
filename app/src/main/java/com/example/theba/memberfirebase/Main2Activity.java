@@ -33,7 +33,6 @@ public class Main2Activity extends AppCompatActivity {
         gone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mAuth.signOut();
                 startActivity(new Intent(Main2Activity.this, Main3Activity.class));
             }
         });

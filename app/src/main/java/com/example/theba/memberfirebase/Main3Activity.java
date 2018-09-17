@@ -1,7 +1,10 @@
 package com.example.theba.memberfirebase;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -24,6 +27,9 @@ public class Main3Activity extends AppCompatActivity
     View headerView;
     NavigationView navigationView;
     FirebaseAuth mAuth;
+    String email;
+    TextView navUsername;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +40,16 @@ public class Main3Activity extends AppCompatActivity
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-        String email = user.getEmail().toString();
+        String email = user.getEmail();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
         View headerView = navigationView.getHeaderView(0);
-        TextView navUsername = (TextView) headerView.findViewById(R.id.textView);
+        final TextView navUsername = (TextView) headerView.findViewById(R.id.textEmail);
+        //email = email.concat(" ").concat(user.getEmail());
         navUsername.setText(email);
 
-        navigationView.setNavigationItemSelectedListener(this);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
