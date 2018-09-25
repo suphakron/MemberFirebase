@@ -34,5 +34,13 @@
                 android:title="Send" />
         </menu>
     </item>
+    <item android:title="Log out">
+        <menu>
+            <item
+                android:id="@+id/nav_signout"
+                android:icon="@drawable/com_facebook_close"
+                android:title="Sign Out" />
+        </menu>
+    </item>
 
 </menu>

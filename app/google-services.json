@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "940707174800-88662141eb5jkfpn66r8cpnds2slsmcm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.theba.memberfirebase",
+            "certificate_hash": "6e7e581fa88790c138792095795df8a2dd8baf5b"
+          }
+        },
+        {
           "client_id": "940707174800-j7noe6c24ecehputgc048ar4caebbfiv.apps.googleusercontent.com",
           "client_type": 3
         }
